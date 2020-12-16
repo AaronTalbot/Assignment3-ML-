@@ -6,7 +6,6 @@ Created on Tue Dec 15 15:22:04 2020
 """
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
 data = pd.read_csv("diamonds.csv")
 
 def Task1():
@@ -39,6 +38,7 @@ def Task1():
                 if len(amount) >=800:
                     Feature_Dict.update({Key:value})
                     Target_Dict.update({Key:Price})
+                    
     print(Feature_Dict)
     print(Target_Dict)
     
@@ -110,4 +110,10 @@ def regression(deg,data,target):
     return p0
 
 
-Task1()
+def main():
+    Features, Targets = Task1()
+    Degree = 3
+    p0 = regression(Degree,Features,Targets)
+    
+        
+        
